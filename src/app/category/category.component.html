@@ -1,0 +1,8 @@
+<ul class="categories">
+    <li>
+        <a (click)="clearCategory()"><span class="category kr">∞</span></a>
+    </li>
+    <li *ngFor="let category of categories; let i = index">
+        <a class="unselectedCategory" id="category#{{ category.id }}" (click)="sendCategory(category, i, categoryName)" #categoryName><span class="category kr">{{ category.name }}</span></a>
+    </li>
+</ul>

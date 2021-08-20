@@ -1,0 +1,8 @@
+<ul class="letters">
+    <li>
+        <a (click)="clearLetter()"><span class="letter kr">∞</span></a>
+    </li>
+    <li *ngFor="let letter of letters; let i = index">
+        <a class="unselectedLetter" id="letter#{{ letter.id }}" (click)="sendLetter(letter, i, letterName)" #letterName><span class="letter kr">{{ letter.symbol }}</span></a>
+    </li>
+</ul>

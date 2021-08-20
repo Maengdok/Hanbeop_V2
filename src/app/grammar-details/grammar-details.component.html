@@ -1,0 +1,24 @@
+<div class="grammarDetails">
+    <div class="title-category">
+        <h2>{{ currentGrammar?.title }}</h2>
+        <h4>
+            <span *ngFor="let category of categories">
+                <span *ngIf="currentGrammar?.category == category.id">
+                    {{ category.name }} / {{ category.kr_name }}
+                </span>
+            </span>
+        </h4>
+    </div>
+    <div class="meaning">
+        <h3>Signification</h3>
+        <h4>{{ currentGrammar?.meaning }}</h4>
+    </div>
+    <div class="phrasing">
+        <h3>Formulation</h3>
+        <h4>{{ currentGrammar?.phrasing }}</h4>
+    </div>
+    <div class="example">
+        <h3>Exemple</h3>
+        <h4>{{ currentGrammar?.example }}</h4>
+    </div>
+</div>

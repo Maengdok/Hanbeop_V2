@@ -1,0 +1,14 @@
+.grammarDetails {
+    display: flex;
+    flex-direction: column;
+
+    .title-category, .meaning, .phrasing, .example {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .meaning h4, .phrasing h4, .example h4 {
+        width: 80%;
+    }
+}

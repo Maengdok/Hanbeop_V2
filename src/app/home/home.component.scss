@@ -1,0 +1,60 @@
+app-yinyang {
+    z-index: 1;
+}
+
+.components {
+    display: flex;
+    flex-direction: column;
+
+    z-index: 10;
+
+    .navbar {
+        display: block;
+        z-index: 20;
+
+        app-navbar {
+            color: white;
+            z-index: 100;
+        }
+    }
+
+    .home {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        height: 1024px;
+        color: white;
+
+        app-letter, app-category {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            text-align: right;
+            z-index: 2;
+        }
+
+        app-letter {
+            position: fixed;
+            width: 5%;
+            top: 40%;
+            right: 2%;
+            transform: translateY(-25%);
+        }
+
+        app-category {
+            position: fixed;
+            width: 22%;
+            top: 50%;
+            right: 8%;
+        }
+
+        app-grammar {
+            width: 70%;
+            z-index: 2;
+        }
+        
+    }
+
+}

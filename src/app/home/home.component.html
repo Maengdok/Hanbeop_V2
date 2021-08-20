@@ -1,0 +1,11 @@
+<app-yinyang></app-yinyang>
+<div class="components">
+    <div class="navbar">
+        <app-navbar></app-navbar>
+    </div>
+    <div class="home">
+        <app-grammar selectedLetter="{{ letterReceived }}" selectedCategory="{{ categoryReceived }}"></app-grammar>
+        <app-category (chosenCategory)="receiveCategory($event)"></app-category>
+        <app-letter (chosenLetter)="receiveLetter($event)"></app-letter>
+    </div>
+</div>

@@ -1,0 +1,59 @@
+.grammarDiv {
+    display: flex;
+}
+
+.showList,
+.showSortedList,
+.showLetterSortedList,
+.showCategorySortedList {
+    list-style-type: none;
+    cursor: pointer;
+    height: 100%;
+    
+    display: flex;
+    flex-wrap: wrap;
+
+    li {
+        margin: 10px 15px;
+
+        a {
+            text-decoration: none;
+
+            &:hover {
+                font-weight: bolder;
+            }
+        }
+
+    }
+}
+
+.hideList,
+.hideSortedList,
+.hideLetterSortedList,
+.hideCategorySortedList {
+    display: none;
+}
+
+.showGrammar,
+.showSortedGrammar,
+.showLetterSortedGrammar,
+.showCategorySortedGrammar {
+    display: block;
+}
+
+.hideGrammar,
+.hideSortedGrammar,
+.hideLetterSortedGrammar,
+.hideCategorySortedGrammar {
+    display: none;
+}
+
+.fa-long-arrow-alt-left {
+    font-size: 25px;
+    margin: 20px 0 0 20px;
+    cursor: pointer;
+
+    &:hover {
+        color: rgb(0, 52, 120);
+    }
+}

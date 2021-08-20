@@ -1,0 +1,83 @@
+<!--##########
+    NOT SORTED
+    ##########-->
+
+<!-- div for the grammar list -->
+<div class="grammarDiv" id="nonSorted" *ngIf="selectedLetter == '0' && selectedCategory == '0'">
+    <ul class="showList" #grammarList>
+        <li *ngFor="let grammar of grammars; let i = index" [class.active]="i == currentGrammar">
+            <a class="grammar kr" (click)="setActiveGrammar(grammar, i, grammarList, showGrammar)">{{ grammar.title }}</a>
+        </li>
+    </ul>
+
+<!-- div for the grammar details -->
+    <div class="hideGrammar" #showGrammar>
+        <span (click)="hideDiv(showGrammar, grammarList)"><i class="fas fa-long-arrow-alt-left"></i></span>
+        <app-grammar-details [currentGrammar]="currentGrammar"></app-grammar-details>
+    </div>
+</div>
+
+<!--##########
+    PER LETTER
+    ##########-->
+
+<!-- div for the grammar list -->
+<div class="grammarDiv" id="letterSorted" *ngIf="selectedLetter != '0' && selectedCategory == '0'">
+    <ul class="showList" #letterSortedGrammarList>
+        <div *ngFor="let grammar of orderedGrammars; let i = index">
+            <li *ngIf="grammar.letter == selectedLetter" [class.active]="i == currentGrammar">
+                <a class="grammar kr" (click)="setActiveGrammar(grammar, i, letterSortedGrammarList, showLetterSortedGrammar)">{{ grammar.title }}</a>
+            </li>
+        </div>
+    </ul>
+
+<!-- div for the grammar details -->
+    <div class="hideGrammar" #showLetterSortedGrammar>
+        <span (click)="hideDiv(showLetterSortedGrammar, letterSortedGrammarList)"><i class="fas fa-long-arrow-alt-left"></i></span>
+        <app-grammar-details [currentGrammar]="currentGrammar"></app-grammar-details>
+    </div>
+</div>
+
+<!--############
+    PER CATEGORY
+    ############-->
+
+<!-- div for the grammar list -->
+<div class="grammarDiv" id="categorySorted" *ngIf="selectedLetter == '0' && selectedCategory != '0'">
+    <ul class="showList" #categorySortedGrammarList>
+        <div *ngFor="let grammar of orderedGrammars; let i = index">
+            <li *ngIf="grammar.category == selectedCategory" [class.active]="i == currentGrammar">
+                <a class="grammar kr" (click)="setActiveGrammar(grammar, i, categorySortedGrammarList, showCategorySortedGrammar)">{{ grammar.title }}</a>
+            </li>
+        </div>
+    </ul>
+
+<!-- div for the grammar details -->
+    <div class="hideGrammar" #showCategorySortedGrammar>
+        <span (click)="hideDiv(showCategorySortedGrammar, categorySortedGrammarList)"><i class="fas fa-long-arrow-alt-left"></i></span>
+        <app-grammar-details [currentGrammar]="currentGrammar"></app-grammar-details>
+    </div>
+</div>
+
+<!--############
+    PER LETTER
+        & 
+    PER CATEGORY
+    ############-->
+
+<!-- div for the grammar list -->
+<div class="grammarDiv" id="letterAndCategorySorted" *ngIf="selectedLetter != '0' && selectedCategory != '0'">
+    <ul class="showList" #sortedGrammarList>
+        <div *ngFor="let grammar of orderedGrammars; let i = index">
+            <li *ngIf="grammar.letter == selectedLetter && grammar.category == selectedCategory" [class.active]="i == currentGrammar">
+                <a class="grammar kr" (click)="setActiveGrammar(grammar, i, sortedGrammarList, showSortedGrammar)">{{ grammar.title }}</a>
+            </li>
+        </div>
+    </ul>
+
+<!-- div for the grammar details -->
+    <div class="hideGrammar" #showSortedGrammar>
+        <span (click)="hideDiv(showSortedGrammar, sortedGrammarList)"><i class="fas fa-long-arrow-alt-left"></i></span>
+        <app-grammar-details [currentGrammar]="currentGrammar"></app-grammar-details>
+    </div>
+</div>

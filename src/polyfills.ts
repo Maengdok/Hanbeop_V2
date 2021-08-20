@@ -63,3 +63,4 @@ import 'zone.js';  // Included with Angular CLI.
 /***************************************************************************************************
  * APPLICATION IMPORTS
  */
+(window as any)['global'] = window /* to correct the error: "Uncaught ReferenceError: global is not defined" */
